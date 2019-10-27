@@ -1,4 +1,5 @@
 #include <iostream>
+#include "lib.h"
 /*
  * Запросить кол-во элементов массива у пользователя
  * Посчитать сумму
@@ -8,7 +9,6 @@
 using namespace std;
 
 unsigned int n = 0;
-int summ = 0;
 int *pointer = nullptr;
 
 int main() {
@@ -31,10 +31,10 @@ int main() {
     cout << "\n";
 
     /*Подсчет суммы и вывод ответа*/
-    for (unsigned int i = 0; i < n; i++){
-        summ += pointer[i];
-    }
-    cout << "Сумма всех элементов массива = " << summ;
+    cout << "Сумма всех элементов массива = " << sum(pointer, n);
+
+    /*Освобождение памяти*/
+    delete [] pointer;
 
     return 0;
 }
